@@ -1,0 +1,14 @@
+---
+title: "Adult Income Group 8"
+author: "Hannah McSorley"
+date: "27/02/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Fork this
+
+Forks are new. I'm just trying merges, this isn't a real script.
