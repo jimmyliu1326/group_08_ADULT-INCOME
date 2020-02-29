@@ -49,7 +49,18 @@ names(dat) <- c("age", "workclass", "fnlwgt", "education", "education-num", "mar
                 "hours-per-week", "native-country", "label")
 ```
 
+### Summary overview
+```{r, summary}
+summary(dat)
+```
+
+The summary overview provides a snapshot of the data spread and averages. From this, we see this dataset includes a disproportionate number of middle-age, white, US-born, private-sector employees. There appears to be a fairly even distribution of individuals across occupational sectors and the majority of individuals work approximately 40 hours per week.
+
+
 ### Clean data
+
+The summary showed that there are many zero values for capital gains and losses. Because the income in this dataset is binary (above or below $50K) the capital gains and losses appear to be a more interesting metric in gauging wealth for the individuals in the Census. We will filter the data to include only instances when there was a non-zero vlaue for capital gains or losses. 
+
 ```{r filter}
 # remove rows that contain zeroes for both capital gain and loss and merge capital-gain and capital-loss into a single variable, net
 dat.filt <- dat %>% 
@@ -65,12 +76,13 @@ dat.filt$race <- trimws(dat.filt$race)
 dat.filt$race <- factor(dat.filt$race, c("Other", "Asian-Pac-Islander", "Amer-Indian-Eskimo", "White", "Black"))
 ```
 
-### Summary overview
-```{r, summary}
+### Filtered summary overview
+
+Here we can view the filtered data summary and see that by filtering by capital gains and losses, the demographic has shifted to slightly older individuals represented by more men than women. 
+
+```{r, filtered-summary}
 summary(dat.filt)
 ```
-
-The summary overview provides a snapshot of the data spread and averages. From this, we see this dataset includes a disproportionate number of middle-age, white, US-born, private-sector employees. There appears to be a fairly even distribution of individuals across occupational sectors and the majority of individuals work approximately 40 hours per week.
 
 ### Relationship between education attainment and annual net gain
 ```{r education-plot}

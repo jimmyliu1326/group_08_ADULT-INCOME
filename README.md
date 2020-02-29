@@ -9,5 +9,5 @@ The dataset we're working with is adult income data from the 1994 US Census Bure
 This repo will evolve with project milestones throughout the course (until April 8, 2020) and each milestone submission will be a tagged release.
 
 Each Project Milestone can be viewed as a _GitHub Page_ here:
-  * Milestone 1: https://stat547-ubc-2019-20.github.io/group_08_ADULT-INCOME/milestone01.html
+  * Milestone 1: https://stat547-ubc-2019-20.github.io/group_08_ADULT-INCOME/docs/milestone01.html
 
