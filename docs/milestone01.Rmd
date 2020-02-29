@@ -27,12 +27,10 @@ This project works with a dataset of adult incomes obtained from the University 
 
 This 1994 income census dataset consists of multivariate categorical and integer data that describe socioeconomic and personal classifiers of adults across the USA. Each instance (32,561) is an individual whose annual income was grouped as either above or below $50,000. Table 1 shows an overview of the 15 attributes (variables), including whether each is categorical or integer and a brief interpretation of the variable.  
 
-<br>
 ```{r, variable-table, echo = FALSE}
 read_csv(here::here("data/variable_summary.csv"), col_names = TRUE) %>% 
   DT::datatable(caption = "description of adult income dataset variables")
 ```
-<br>
 
 A couple of assumptions were made about these data based on information on the Census website. It is assumed that "capital gains" indicate non-cash financial benefits (e.g., food stamps, health benefits, subsidized housing or transportation, employer contributions to retirement programs, medical and educational expenses, etc.), and that "capital losses" include non-cash expenses (such as depreciated value of assets). We are also assuming that "education number" indicates the number of years allotted to education.  
 
