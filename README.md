@@ -23,6 +23,7 @@ Each Project Milestone can be viewed as a _GitHub Page_ here:
    * docopt
 
 3. __Run the scripts under ```scripts/``` in the following order via command-line__
+
    a. _Download raw data_
 
    b. _Process raw data_
