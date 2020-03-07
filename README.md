@@ -14,21 +14,27 @@ Each Project Milestone can be viewed as a _GitHub Page_ here:
   
 ## Scripts Usage
 
-1. Download raw data
+1. __Clone this repository__
 
-2. Process raw data
-```
-data_processing.R --input data/adult.data --output data/adult.data.processed
-```
+2. __Check the follow R libraries are installed:__
+   * tidyverse
+   * here
+   * glue
+   * docopt
 
-3. Visualize processed data
+3. __Run the scripts under ```scripts/``` in the following order via command-line__
+   a. _Download raw data_
 
-  * Net gain vs education boxplot
-  ```
-  net_education_plot.R --input data/adult.data.processed --output images/net_education_plot.png
-  ```
-  
-  * Net gain vs work hours per week boxplot
-  ```
-  net_work_hours_plot.R --input data/adult.data.processed --output images/net_work_hours_plot.png
-
+   b. _Process raw data_
+      ```
+      data_processing.R --input data/adult.data --output data/adult.data.processed
+      ```
+   c. _Visualize processed data_
+      * Net gain vs education boxplot
+        ```
+        net_education_plot.R --input data/adult.data.processed --output images/net_education_plot.png
+        ```
+      * Net gain vs work hours per week boxplot
+        ```
+        net_work_hours_plot.R --input data/adult.data.processed --output images/net_work_hours_plot.png
+        ```
