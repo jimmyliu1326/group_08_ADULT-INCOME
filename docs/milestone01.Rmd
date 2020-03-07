@@ -92,9 +92,10 @@ dat.filt %>%
   geom_boxplot() +
   coord_flip() +
   scale_y_continuous(labels = scales::dollar_format()) +
-  theme_bw() +
-  xlab("Education attainment level") +
-  ylab("Annual net gain")
+  theme_bw(12) +
+  labs(x = "Education attainment level",
+       y = "Annual net gain",
+       title = "Relationship between education attainment and annual net gain")
 ```
 
 From the above boxplot, there seems to be minimal correlation between annual net gain and education attainment, however there seems to be a greater spread in annual net gain for individuals with at least a high school diploma. Professional school education demonstrated the highest median in annual net gain.
@@ -108,9 +109,10 @@ dat.filt %>%
   geom_violin() +
   coord_flip() +
   scale_y_continuous(labels = scales::dollar_format()) +
-  theme_bw() +
-  xlab("Ethnicity") +
-  ylab("Annual net gain")
+  theme_bw(12) +
+  labs(x = "Ethnicity",
+       y = "Annual net gain",
+       title = "Relationship between race, gender, and annual net gain")
 ```
 
 From the above violin plot, there doesn't appear to be any significant differences in annual net gain between sex across all ethnic groups. Moreover, no obvious correlation between ethncity and annual net gain can be observed.
@@ -124,13 +126,14 @@ dat.filt %>%
                                   `hours-per-week` > 50 & `hours-per-week` <= 75 ~ "Long",
                                   TRUE ~ "Very Long"),
                                levels = c("Short", "Medium", "Long", "Very Long"))) %>% 
-  ggplot(aes(x = `work hours`, y = net, fill = `work hours`)) +
+  ggplot(aes(x = `work hours`, y = net)) +
   geom_boxplot() +
-  theme_bw() +
+  theme_bw(12) +
   guides(fill = F) +
   scale_y_continuous(labels = scales::dollar_format()) +
-  xlab("Work Hours") +
-  ylab("Annual net gain")
+  labs(x = "Work Hours",
+       y = "Annual net gain",
+       title = "Relationship between work hours per week and annual net gain")
 ```
 
 From the above boxplot, there appears to be an increase in annual net gain from short to long work hours. However, the differences may not be significant because greater variance in annual net gain is observed for individuals with long work hours.

@@ -20,8 +20,8 @@ opt <- docopt(doc)
 main <- function(input_path) {
   
   # read input file
-  dat <- read.csv(here(input_path), header = T)
   print(glue("[",as.character(Sys.time()),"] Reading input file from: ", opt$input))
+  dat <- read.csv(here(input_path), header = T)
   
   # rename columns
   names(dat) <- c("age", "workclass", "fnlwgt", "education", "education-num", "martial_status", 
