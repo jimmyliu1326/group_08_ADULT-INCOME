@@ -1,9 +1,9 @@
 # author: Jimmy Liu and Hannah McSorley
 # date: 03-06-2020
 
-"This script will generate a boxplot that describes the distribution of annual net gain across education levels from the processed data file.
+"This script will generate a boxplot that describes the distribution of annual net gain across education levels from the processed data file as input.
 
-Usage: net_education_plot.R --input=</path/to/input_file> --output=</path/to/output_directory>
+Usage: net_education_plot.R --input=</path/to/input_filename> --output=</path/to/output_filename.png>
 " -> doc
 
 # load library
@@ -19,7 +19,7 @@ opt <- docopt(doc)
 main <- function(input_path) {
   # read input file
   print(glue("[",as.character(Sys.time()),"] Reading input file from: ", opt$input))
-  dat <- read.csv(here(input_path), header = T)
+  dat <- read.csv(here(input_path), header = T, check.names = F)
   
   # generate boxplot
   print(glue("[",as.character(Sys.time()),"] Generating plot..."))
